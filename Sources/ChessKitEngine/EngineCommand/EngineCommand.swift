@@ -75,6 +75,8 @@ public enum EngineCommand {
     /// for more information.
     case quit
     
+    case custom(command: String)
+    
     /// Produces the raw engine-readable string for the given command.
     var rawValue: String {
         switch self {
@@ -163,6 +165,8 @@ public enum EngineCommand {
             return "ponderhit"
         case .quit:
             return "quit"
+        case .custom(command: let command):
+            return command
         }
     }
 }
