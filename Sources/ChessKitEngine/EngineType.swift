@@ -10,12 +10,14 @@ public enum EngineType: Int {
 
     case stockfish
     case lc0
+    case fairyStockfish
 
     /// Internal mapping from Swift to Obj-C type.
     var objc: EngineType_objc {
         switch self {
         case .stockfish: .stockfish
         case .lc0:       .lc0
+        case .fairyStockfish: .fairyStockfish
         }
     }
 
@@ -24,6 +26,7 @@ public enum EngineType: Int {
         switch self {
         case .stockfish: "Stockfish"
         case .lc0:       "LeelaChessZero (Lc0)"
+        case .fairyStockfish: "Fairy Stockfish"
         }
     }
 
@@ -32,6 +35,7 @@ public enum EngineType: Int {
         switch self {
         case .stockfish: "17"
         case .lc0:       "0.31.1"
+        case .fairyStockfish: "Fairy-Stockfish 191224"
         }
     }
 
@@ -55,6 +59,8 @@ public enum EngineType: Int {
             }
 
             return fileOptions.map(EngineCommand.setoption)
+            case .fairyStockfish:
+                return []
         }
     }
 

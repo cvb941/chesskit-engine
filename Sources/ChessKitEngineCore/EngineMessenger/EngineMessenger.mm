@@ -31,6 +31,9 @@ NSFileHandle *_pipeWriteHandle;
             case EngineTypeLc0:
                 _engine = new Lc0Engine();
                 break;
+            case EngineTypeFairyStockfish:
+                _engine = new FairyStockfishEngine();
+                break;
         }
     }
 
