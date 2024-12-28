@@ -8,7 +8,6 @@
 
 typedef NS_ENUM(NSInteger, EngineType_objc) {
     EngineTypeStockfish,
-    EngineTypeLc0,
     EngineTypeFairyStockfish
 };
 
