@@ -68,6 +68,6 @@ class InputSlice {
  private:
 };
 
-}  // namespace FairyStockfish::Eval::NNUE::Layers
+}  // namespace Stockfish::Eval::NNUE::Layers
 
 #endif // #ifndef NNUE_LAYERS_INPUT_SLICE_H_INCLUDED
