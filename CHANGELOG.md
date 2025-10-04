@@ -1,3 +1,22 @@
+# ChessKitEngine 0.7.0
+Released Monday, September 15, 2025.
+
+### Improvements
+* Commands and responses are now logged using their own synchronous queue to prevent unreadable output when commands and responses were sent simultaneously.
+* `setLoggingEnabled(loggingEnabled:)` has been renamed `set(loggingEnabled:) async`.
+  * The original function remains but is deprecated.
+* Change default `coreCount` in `Engine.start()` to **one less** than the device's core count (minimum of 1).
+  * This allows a free core for other processing tasks in a multicore environment.
+  * Can still be changed with the `coreCount` parameter if desired.
+* `Engine` now automatically stops related processes when it is deinitialized.
+
+# ChessKitEngine 0.6.0
+Released Friday, May 30, 2025.
+
+### Breaking Changes
+* `ChessKitEngine` now supports Swift 6 concurrency (by [@Amir-Zucker](https://github.com/Amir-Zucker)).
+  * Starting and stopping engine, as well as sending commands must now be done using `async`/`await`.
+
 # ChessKitEngine 0.5.0
 Released Tuesday, September 10, 2024.
 
